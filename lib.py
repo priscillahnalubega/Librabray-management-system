@@ -29,3 +29,34 @@ nonfiction_book = NonFiction("A Brief History of Time", "Stephen Hawking", "9876
 print(fiction_book.display_info())
 print(nonfiction_book.display_info())
 
+class Book:
+    def __init__(self, title, author, isbn):
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+
+    def display_info(self):
+        return f"Book: {self.title} by {self.author}"
+
+class Fiction(Book):
+    def __init__(self, title, author, isbn, genre):
+        super().__init__(title, author, isbn)
+        self.genre = genre
+
+    def display_info(self):
+        return f"{super().display_info()}, Genre: {self.genre}"
+
+class NonFiction(Book):
+    def __init__(self, title, author, isbn, subject):
+        super().__init__(title, author, isbn)
+        self.subject = subject
+
+    def display_info(self):
+        return f"{super().display_info()}, Subject: {self.subject}"
+
+
+books = [Fiction("1984", "George Orwell", "123456789", "Dystopian"),
+         NonFiction("A Brief History of Time", "Stephen Hawking", "987654321", "Science")]
+
+for book in books:
+    print(book.display_info())
