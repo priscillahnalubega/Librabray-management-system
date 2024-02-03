@@ -1,2 +1,2 @@
-# Librabray-managent-system
+# Librabray-management-system
 A simple Library management system
